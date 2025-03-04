@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your Ticket is Cooked!</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+      .container {
+        width: 100%;
+        max-width: 700px;
+        margin: 20px auto;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: #1a1a1a;
+        color: white;
+        padding: 0px 20px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+      }
+      .header-text {
+        flex: 2;
+        font-family: "Helvetica", sans-serif;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        margin: 0 0 30px 20px;
+        align-self: last baseline;
+      }
+      .header-image {
+        flex: 1;
+        height: 200px;
+        width: auto;
+      }
+      .content {
+        padding: 30px 40px;
+        font-family: "Verdana", sans-serif;
+      }
+      .event-detail {
+        margin: 8px 0;
+      }
+      .footer {
+        padding: 10px 0 30px 0;
+        display: flex;
+        align-items: center;
+      }
+
+    .footer-img {
+        width: 25%;
+        height: auto;
+    }
+
+      .signature {
+        margin-top: 20px;
+      }
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+      .rocket {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-text">YOUR TICKET IS COOKED!!!</div>
+        <img
+          class="header-image"
+          src="barbecue.png"
+          alt="Grilling Illustration"
+        />
+        <!-- src="https://imgur.com/sPHdTNY" -->
+      </div>
+      <div class="content">
+        <p>Dear {{ participant_name }},</p>
+
+        <p>
+          Thank you for registering for
+          <strong>{{ event_name }}</strong> through MyOtherApp! We're excited to
+          have you join us. Here are the event details:
+        </p>
+
+        <p class="event-detail">🗓️ Date: {{ event_date }}</p>
+        <p class="event-detail">⏰ Time: {{ event_time }}</p>
+        <p class="event-detail">📍 Location: {{ event_location }}</p>
+        {% if event_prizes %}
+        <p class="event-detail">🏆 Prizes: {{ event_prizes }}</p>
+        {% endif %}
+        <p class="event-detail">📢 Organized by: {{ organizer_name }}</p>
+
+        <p>
+          Please keep this email as confirmation of your registration. If you
+          have any questions or need assistance, feel free to reach out to
+          <strong>{{ contact_email }}</strong> or call
+          <strong>{{ contact_phone }}</strong>.
+        </p>
+        <p>
+          We look forward to seeing you at the event!
+          <span class="rocket">🚀</span>
+        </p>
+
+        <div class="signature">
+          <p>
+            Best regards,<br />
+            {{ sender_name }}<br />
+            {{ organization_name }}<br />
+            <a href="{{ website_link }}">Website</a> |
+            <a href="{{ social_media_link }}">Social Media</a>
+          </p>
+        </div>
+        <div class="footer"><img src="./logo.png" 
+            alt="logo" class="footer-img"></span></div>
+        <!-- src="https://imgur.com/7oi7Uyx" -->
+    </div>
+    </div>
+  </body>
+</html>
